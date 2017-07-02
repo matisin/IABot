@@ -8,6 +8,7 @@ import atlantis.units.AUnit;
 import atlantis.util.CodeProfiler;
 
 public class ACombatCommander {
+    public static boolean first = true;
     
     /**
      * Acts with all battle units.
@@ -19,6 +20,14 @@ public class ACombatCommander {
         
         if (AGame.getTimeFrames() % 20 == 0) {
             Missions.handleGlobalMission();
+        }
+        if (AGame.getTimeFrames() % 50 == 0) {
+            if(first){
+                first = false;
+            }else{
+               ANeatManager.setFitnessOrEvolve(); 
+            }
+            
         }
         
         // === Handle all squads ========================================

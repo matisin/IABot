@@ -90,6 +90,9 @@ public class AUnit extends APositionedObject implements Comparable, AUnitOrders 
                 AUnitType.Terran_Bunker, AUnitType.Terran_Missile_Turret,
                 AUnitType.Protoss_Photon_Cannon, AUnitType.Zerg_Spore_Colony
         );
+        
+        // Combate
+       
     }
 
     // =========================================================

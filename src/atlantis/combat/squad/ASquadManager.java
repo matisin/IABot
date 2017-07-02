@@ -1,5 +1,6 @@
 package atlantis.combat.squad;
 
+import atlantis.combat.ANeatManager;
 import atlantis.combat.squad.missions.Missions;
 import atlantis.units.AUnit;
 import java.util.ArrayList;
@@ -15,15 +16,15 @@ public class ASquadManager {
     protected static ArrayList<Squad> squads = new ArrayList<>();
 
     // =========================================================
-    
+    //le agregué a este método una asignación de la red neuronal
     public static void possibleCombatUnitCreated(AUnit unit) {
         if (shouldSkipUnit(unit)) {
             return;
         }
-
         Squad squad = getAlphaSquad();
         squad.addUnit(unit);
         unit.setSquad(squad);
+        ANeatManager.setBrain(unit);
         
 //        AGame.sendMessage("Assign " + unit + " to squad " + squad);
 //        System.err.println("Assign " + unit + " to squad " + squad);

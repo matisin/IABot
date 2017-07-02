@@ -29,14 +29,15 @@ public class AGameCommander {
         // === Execute paint methods ========================================
         
         APainter.paint();
+       
 
         // === Execute code of every Commander and Manager ==================
         
-        AStrategyCommander.update();
-        AProductionCommander.update();
+       // AStrategyCommander.update();
+        //AProductionCommander.update();
         AWorkerCommander.update();
         ACombatCommander.update();
-        AScoutManager.update();
+        //AScoutManager.update();
 
         // === Terran only ==================================================
 

@@ -1,6 +1,7 @@
 package atlantis;
 
 import static atlantis.Atlantis.getBwapi;
+import atlantis.combat.ANeatManager;
 import atlantis.units.AUnitType;
 import atlantis.units.Select;
 import atlantis.util.AtlantisUtilities;

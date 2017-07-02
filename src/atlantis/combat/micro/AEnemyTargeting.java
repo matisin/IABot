@@ -17,7 +17,6 @@ public class AEnemyTargeting {
         if (enemySelector.inRadius(14, unit).count() == 0) {
             return null;
         }
-        
         boolean canAttackGround = unit.canAttackGroundUnits(); 
         boolean canAttackAir = unit.canAttackAirUnits(); 
         AUnit nearestEnemy = null;

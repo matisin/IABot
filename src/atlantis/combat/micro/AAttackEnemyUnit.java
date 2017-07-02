@@ -1,6 +1,9 @@
 package atlantis.combat.micro;
 
+import atlantis.combat.ANeatManager;
+import atlantis.debug.APainter;
 import atlantis.units.AUnit;
+import java.awt.Color;
 
 /**
  *
@@ -40,8 +43,12 @@ public class AAttackEnemyUnit {
         
         // If we already are attacking this unit, do not issue double command.
         if (enemyToAttack != null && !unit.isJustShooting()) {
-            unit.setTooltip("Attacking " + enemyToAttack.getShortName());
-            return unit.attackUnit(enemyToAttack);
+            unit.setTooltip("Attacking " + enemyToAttack.getShortName());            
+            boolean attack = ANeatManager.getAction(unit, enemyToAttack);
+            APainter.paintLine(unit,unit.getTargetPosition().getPoint(), bwapi.Color.Yellow);
+            return attack;
+            
+            //return unit.attackUnit(enemyToAttack);
         } 
         
         return false;

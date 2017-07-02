@@ -1,6 +1,7 @@
 package atlantis.units;
 
 import atlantis.AGame;
+import atlantis.combat.ANeatManager;
 import atlantis.position.APosition;
 import atlantis.units.actions.UnitAction;
 import atlantis.units.actions.UnitActions;
@@ -44,8 +45,11 @@ public interface AUnitOrders {
 //            System.out.println("getTarget = " + unit().getTarget());
 //            System.out.println(unit().getID() + " attacks " + target.getShortName());
 //            AGame.sendMessage("#" + unit().getID() + " attacks #" + target.getID());
-            u().attack(target.u());
+            int damage = target.getHitPoints();
+            u().attack(target.u());            
             unit().setOrderWasIssued();
+            damage-= target.getHitPoints();
+            ANeatManager.damageDealt(unit(), damage);
             return true;
         }
     }
@@ -105,6 +109,7 @@ public interface AUnitOrders {
         }
         
         unit().setUnitAction(unitAction);
+       
         
         // === Handle LOADED/SIEGED units ========================================
         

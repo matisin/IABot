@@ -46,8 +46,12 @@ public class AtlantisConfig {
     /**
      * Will modify bwapi.ini to use this map.
      */
-//    public static final String MAP = "maps/sscai/(?)*.sc?";
-    public static final String MAP = "Maps/BroodWar/umt/vultureDrive.scx";
+    public static final String MAP = "";
+   // public static final String MAP = "Maps/asddsa.scm";
+    public static final String game_type = "Use Map Settings";
+    
+    //generacion actual de la red
+   public static int GENERACION_RED = 181;
     
     // =========================================================
     // === These are default values that can be overriden in ===
